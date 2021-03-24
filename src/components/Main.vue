@@ -7,6 +7,8 @@
       two的内容显示
     </div> -->
     <AppTodos v-if="todos[0].content[0].isShow" />
+    <AppSearch v-if="todos[0].content[1].isShow" />
+    
     <AppTwo v-if="todos[1].content[0].isShow" />
     <BigImg v-if="todos[1].content[1].isShow" />
   </main>
@@ -17,12 +19,14 @@
   import AppTodos from "./ex1/AppTodos";
   import AppTwo from "./ex2/AppTwo";
   import BigImg from "./ex3/BigImg";
+  import AppSearch from "./ex4/AppSearch";
 
   export default {
     components:{
       AppTodos,
       AppTwo,
-      BigImg
+      BigImg,
+      AppSearch,
     },
     props:['todos'],
     

@@ -1,5 +1,6 @@
 <template>
   <div id="wrap">
+    <!-- <mt-button type="primary" >plain</mt-button> -->
     <Header
       :todos="todos"
       :changeShowState="changeShowState"
@@ -28,6 +29,7 @@
             title:"video_ex",
             content:[
               {id:11, conTitle:"todos_ex", isShow:false},
+              {id:12, conTitle:"search_github_user", isShow:true},
             ]
           },
           {
@@ -35,11 +37,11 @@
             title:"self",
             content:[
               {id:21, conTitle:"轮播图", isShow:false},
-              {id:22, conTitle:"放大镜", isShow:true},
+              {id:22, conTitle:"放大镜", isShow:false},
             ]
           },
         ],
-        lastShowMainIndex:[1,1]
+        lastShowMainIndex:[0,1]
       }
     },
     methods:{

@@ -34,7 +34,20 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env']
+            presets: [
+              ['@babel/preset-env',{
+                'corejs': 2,
+                useBuiltIns: 'usage', 
+              }]
+            ],
+            plugins:[
+              ["component", 
+                {
+                  "libraryName": "mint-ui", //针对mint-ui库按需引入打包
+                  "style": true //自动打包对应的css
+                }
+              ]
+            ],
           }
         }
       },
@@ -74,6 +87,16 @@ module.exports = {
   devServer: {
     open: true, // 自动打开浏览器
     quiet: true, // 不做太多日志输出
+    /* proxy:{
+      //处理以/api开头的路径请求
+      '/api': {
+        target:'http://localhost:4000',
+        pathRewrite: {
+          '^/api' : '' //转发请求时去除路径前面的api
+        }
+      },
+      changeOrigin: true, //如果主机?|协议?也不相同, 必须加上
+    } */
   },
   // 配置开启source-map调试
   // 作用是, 当遇到错误的时候, 告知你出问题的代码在源文件的哪一行
