@@ -6,11 +6,19 @@
     <div class="two" name="two">
       two的内容显示
     </div> -->
-    <AppTodos v-if="todos[0].content[0].isShow" />
-    <AppSearch v-if="todos[0].content[1].isShow" />
+    <transition name='one'>
+      <AppTodos v-if="todos[0].content[0].isShow" />
+    </transition>
+    <transition name="one">
+      <AppSearch v-if="todos[0].content[1].isShow" />
+    </transition>
+    <transition name="one">
+      <AppTwo v-if="todos[1].content[0].isShow" />
+    </transition name='one'>
+    <transition>
+      <BigImg v-if="todos[1].content[1].isShow" />
+    </transition>
     
-    <AppTwo v-if="todos[1].content[0].isShow" />
-    <BigImg v-if="todos[1].content[1].isShow" />
   </main>
 </template>
 
@@ -40,5 +48,15 @@
   background-color: #efefef;
   height: 80vh;
 }
-
+.one-enter-active,.one-leave-active{
+  transition: 1s;
+}
+.one-enter,.one-leave-to{
+  opacity: 0;
+  transform: translateX(20px);
+}
+.one-enter-to,.one-leave{
+  opacity: 1;
+  transform: translateX(0px);
+}
 </style>

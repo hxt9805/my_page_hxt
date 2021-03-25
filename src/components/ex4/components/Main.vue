@@ -35,10 +35,8 @@
         // 更新状态数据(请求中)
         this.firstView = false
         this.loading = true
-
-
+        // 发送异步ajax请求, 获取用户列表数据
         try {
-          // 发送异步ajax请求, 获取用户列表数据
           const reponse =  await axios('https://api.github.com/search/users',{params: {q: searchName},})
           // 如果成果了, 更新状态数据(成功)
           const result = reponse.data
