@@ -13,6 +13,9 @@
       <AppSearch v-if="todos[0].content[1].isShow" />
     </transition>
     <transition name="one">
+      <AppSearchVuex v-if="todos[0].content[2].isShow" />
+    </transition>
+    <transition name="one">
       <AppTwo v-if="todos[1].content[0].isShow" />
     </transition name='one'>
     <transition>
@@ -28,6 +31,7 @@
   import AppTwo from "./ex2/AppTwo";
   import BigImg from "./ex3/BigImg";
   import AppSearch from "./ex4/AppSearch";
+  import AppSearchVuex from "./ex4_vuex/AppSearchVuex";
 
   export default {
     components:{
@@ -35,6 +39,7 @@
       AppTwo,
       BigImg,
       AppSearch,
+      AppSearchVuex,
     },
     props:['todos'],
     

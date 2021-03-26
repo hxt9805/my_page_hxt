@@ -29,7 +29,8 @@
             title:"video_ex",
             content:[
               {id:11, conTitle:"todos_ex", isShow:false},
-              {id:12, conTitle:"search_github_user", isShow:true},
+              {id:12, conTitle:"search_github_user", isShow:false},
+              {id:13, conTitle:"search_github_user_vuex", isShow:true},
             ]
           },
           {
@@ -41,7 +42,7 @@
             ]
           },
         ],
-        lastShowMainIndex:[0,1]
+        lastShowMainIndex:[0,2]
       }
     },
     methods:{
