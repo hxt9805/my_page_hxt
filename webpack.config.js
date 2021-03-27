@@ -40,6 +40,7 @@ module.exports = {
                 useBuiltIns: 'usage', 
               }]
             ],
+            // 配置ui组件库的按需引入
             plugins:[
               ["component", 
                 {

@@ -208,3 +208,31 @@
         }
       }
     },
+
+## 8. 解决mint-ui按需引入配置异常的问题
+    1). 文档上的配置
+        "plugins": [
+          ["component", [
+            {
+              "libraryName": "mint-ui",
+              "style": true
+            }
+          ]]
+        ]
+    2). 异常信息:  
+        Error: .plugins[0][1] must be an object, false, or undefined
+    3). 原因:
+        文档编写时, 是根据老的babel版本编写的, 新版本的babel配置有变化
+        以前是数组, 现在只能是对象
+    4). 修正:
+        "plugins": [
+          ["component", {
+              "libraryName": "mint-ui",
+              "style": true
+          }]
+        ]
+
+
+## 9. 解决history模式路由请求404的问题
+    devServer: historyApiFallback: true, // 任意的 404 响应都被替代为 index.html
+    output: publicPath: '/', // 引入打包的文件时路径以/开头
